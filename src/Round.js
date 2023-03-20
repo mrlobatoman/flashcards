@@ -28,6 +28,13 @@ class Round {
         let percentage = 100 - (Math.floor((incorrectGuessAmount / deckSize) * 100))
         return percentage
     }
+
+    endRound() {
+        let message = `** Round over! ** You answered ${this.calculatePercentageCorrect()}% of the questions correctly!`
+        console.log(message)
+        return message
+
+    }
 }
 
 module.exports = Round
