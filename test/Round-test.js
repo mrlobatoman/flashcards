@@ -30,7 +30,7 @@ describe('Round', function() {
     })
 
     it('should store the first card of the cards array', function() {
-        expect(round.cardInPlay.id).to.equal(1)
+        expect(round.cardInPlay).to.equal(card1)
     })
 
     it('should start with an empty array of incorrect guesses', function() {
@@ -39,5 +39,14 @@ describe('Round', function() {
 
     it('should start with zero turns taken', function() {
         expect(round.turns).to.equal(0)
+    })
+
+    it('returnCurrentCard should return card in play', function() {
+        expect(round.returnCurrentCard()).to.equal(card1)
+    })
+
+    it('takeTurn should return feeback to user based on their guess', function() {
+        expect(round.takeTurn('object')).to.equal('correct!')
+        expect(round.takeTurn('triangle')).to.equal('incorrect!')
     })
 })
