@@ -49,4 +49,13 @@ describe('Round', function() {
         expect(round.takeTurn('object')).to.equal('correct!')
         expect(round.takeTurn('triangle')).to.equal('incorrect!')
     })
+
+    it('takeTurn should iterate through each card after a turn', function() {
+        expect(round.returnCurrentCard()).to.equal(card1)
+        round.takeTurn('guess1')
+        expect(round.returnCurrentCard()).to.equal(card2)
+        round.takeTurn('guess2')
+        expect(round.cardInPlay).to.equal(card3)
+
+    })
 })
