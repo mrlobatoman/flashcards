@@ -7,10 +7,13 @@ class Turn {
 // when creating a new instance of turn, the userGuess will be user input and is
     // assigned to the userGuess property
 
+    returnGuess() {
+        this.userGuess
+    }
 
-returnGuess() {
-    this.userGuess
-}
+    returnCard() {
+        this.currentCard
+    }
 
 }
 
