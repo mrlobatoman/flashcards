@@ -5,9 +5,13 @@ const Turn = require('../src/Turn')
 const Card = require('../src/Card')
 
 describe('Turn', function() {
+    let card1, turn
+    beforeEach(() => {
+        card1 = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object')
+        turn = new Turn()
+    })
 
     it('should be a function', function() {
-        const turn = new Turn()
         expect(Turn).to.be.a('function')
     })
 
@@ -17,12 +21,14 @@ describe('Turn', function() {
     })
 
     it('should store a user guess', function() {
-        const turn = new Turn('koala')
-        expect(turn.userGuess).to.equal('koala')
+        const turn = new Turn('array')
+        expect(turn.userGuess).to.equal('array')
     })
 
     it('should store a card object', function() {
-        const card = new Card(1, 'What allows you to define a set of related information using key-value pairs?', ['object', 'array', 'function'], 'object')
-        
+        turn = new Turn('array', card1)
+        expect(turn.currentCard).to.equal(card1)
     })
+
+
 })
