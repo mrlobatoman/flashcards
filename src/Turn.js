@@ -8,13 +8,17 @@ class Turn {
     // assigned to the userGuess property
 
     returnGuess() {
-        this.userGuess
+        return this.userGuess
     }
 
     returnCard() {
-        this.currentCard
+        return this.currentCard
     }
-
+// Create a method that returns a boolean indicating the if the 
+    // userGuess === card.correctAnswer
+    evaluateGuess() {
+        return this.userGuess === this.currentCard.correctAnswer
+    }
 }
 
 module.exports = Turn
