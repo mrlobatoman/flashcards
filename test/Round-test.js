@@ -63,4 +63,10 @@ describe('Round', function() {
         round.takeTurn('guess1')
         expect(round.calculatePercentageCorrect()).to.equal(67)
     })
+
+    it('should should end round with closing statement', function() {
+        expect(round.endRound()).to.equal(`** Round over! ** You answered 100% of the questions correctly!`)
+        round.takeTurn('guess1')
+        expect(round.endRound()).to.equal(`** Round over! ** You answered 67% of the questions correctly!`)
+    })
 })
