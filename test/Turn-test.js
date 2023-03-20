@@ -16,12 +16,12 @@ describe('Turn', function() {
     })
 
     it('should be an instance of Turn', function() {
-        const turn = new Turn()
+        turn = new Turn()
         expect(turn).to.be.an.instanceOf(Turn)
     })
 
     it('should store a user guess', function() {
-        const turn = new Turn('array')
+        turn = new Turn('array')
         expect(turn.userGuess).to.equal('array')
     })
 
@@ -30,5 +30,30 @@ describe('Turn', function() {
         expect(turn.currentCard).to.equal(card1)
     })
 
+    it('returnGuess should return string of users guess', function() {
+        turn = new Turn('array')
+        expect(turn.returnGuess()).to.equal('array')
+    })
+
+    it('returnCard should resturn an object of a card', function() {
+        turn = new Turn('array', card1)
+        expect(turn.returnCard()).to.equal(card1)
+    })
+
+    it('evaluateGuess should return a boolean', function() {
+        turn = new Turn('object', card1)
+        expect(turn.evaluateGuess()).to.equal(true)
+
+        turn = new Turn('array', card1)
+        expect(turn.evaluateGuess()).to.equal(false)
+    })
+
+    it('giveFeedback should return a string based of the conditional in evaluateGuess', function() {
+        turn = new Turn('object', card1)
+        expect(turn.giveFeedback()).to.equal('correct!')
+
+        turn = new Turn('array', card1)
+        expect(turn.giveFeedback()).to.equal('incorrect!')
+    })
 
 })
