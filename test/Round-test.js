@@ -16,4 +16,28 @@ describe('Round', function() {
         deck = new Deck(cards)
         round = new Round(deck)
     })
+
+    it('should be a function', function() {
+        expect(Round).to.be.a('function')
+    })
+
+    it('should be an instance of round', function() {
+        expect(round).to.be.an.instanceOf(Round)
+    })
+
+    it('should be able to store a deck', function() {
+        expect(round.deck).to.equal(deck)
+    })
+
+    it('should store the first card of the cards array', function() {
+        expect(round.cardInPlay.id).to.equal(1)
+    })
+
+    it('should start with an empty array of incorrect guesses', function() {
+        expect(round.incorrectGuesses).to.deep.equal([])
+    })
+
+    it('should start with zero turns taken', function() {
+        expect(round.turns).to.equal(0)
+    })
 })
