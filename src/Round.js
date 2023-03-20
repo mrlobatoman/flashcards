@@ -15,12 +15,11 @@ class Round {
     takeTurn(guess) {
         let turn = new Turn(guess, this.cardInPlay)
         this.turns += 1
-        if(turn.userGuess === this.cardInPlay.correctAnswer) {
-            return turn.giveFeedback()
-        } else {
+        this.cardInPlay = this.deck.cards[this.turns]
+        if(!turn.evaluateGuess) {
             this.incorrectGuesses.push(this.cardInPlay.id)
-            return turn.giveFeedback()
-        }
+        } 
+        return turn.giveFeedback()
     }
 }
 
