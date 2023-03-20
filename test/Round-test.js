@@ -56,6 +56,11 @@ describe('Round', function() {
         expect(round.returnCurrentCard()).to.equal(card2)
         round.takeTurn('guess2')
         expect(round.cardInPlay).to.equal(card3)
+    })
 
+    it('should calculate percentage correct', function() {
+        // expect(round.calculatePercentageCorrect()).to.equal(100)
+        round.takeTurn('guess1')
+        expect(round.calculatePercentageCorrect()).to.equal(67)
     })
 })
