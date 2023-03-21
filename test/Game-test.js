@@ -17,4 +17,27 @@ describe('Game', function() {
         round = new Round(deck)
         game = new Game()
     })
+
+    it('should be a function', function() {
+        expect(Game).to.be.a('function')
+    })
+
+    it('should be an instance of game', function() {
+        expect(game).to.be.an.instanceOf(Game)
+    })
+
+    it('should create card instances when starting new game', function() {
+        game.start()
+        expect(game.currentRound.deck.cards[0]).to.be.an.instanceOf(Card)
+    })
+
+    it('should create new deck instance when starting new game', function() {
+        game.start()
+        expect(game.currentRound.deck).to.be.an.instanceOf(Deck)
+    })
+
+    it('should create an instance of round when starting new game', function() {
+        game.start()
+        expect(game.currentRound).to.be.an.instanceOf(Round)
+    })
 })
