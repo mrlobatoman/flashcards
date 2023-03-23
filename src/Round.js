@@ -14,10 +14,10 @@ class Round {
 
     takeTurn(guess) {
         let turn = new Turn(guess, this.cardInPlay)
-        this.turns += 1
         if(!turn.evaluateGuess()) {
             this.incorrectGuesses.push(this.cardInPlay.id)
         }
+        this.turns += 1
         this.cardInPlay = this.deck.cards[this.turns] 
         return turn.giveFeedback()
     }
@@ -33,7 +33,6 @@ class Round {
         let message = `** Round over! ** You answered ${this.calculatePercentageCorrect()}% of the questions correctly!`
         console.log(message)
         return message
-
     }
 }
 
