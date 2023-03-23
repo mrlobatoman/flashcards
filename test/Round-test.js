@@ -60,8 +60,11 @@ describe('Round', function() {
 
     it('should calculate percentage correct', function() {
         // expect(round.calculatePercentageCorrect()).to.equal(100)
-        round.takeTurn('guess1')
-        expect(round.calculatePercentageCorrect()).to.equal(67)
+        round.takeTurn('object')
+        round.takeTurn('guess2')
+        round.takeTurn('guess3')
+        
+        expect(round.calculatePercentageCorrect()).to.equal(34)
     })
 
     it('should should end round with closing statement', function() {
