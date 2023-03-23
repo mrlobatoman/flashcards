@@ -59,7 +59,6 @@ describe('Round', function() {
     })
 
     it('should calculate percentage correct', function() {
-        // expect(round.calculatePercentageCorrect()).to.equal(100)
         round.takeTurn('object')
         round.takeTurn('guess2')
         round.takeTurn('guess3')

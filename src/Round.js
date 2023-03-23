@@ -33,7 +33,6 @@ class Round {
         let message = `** Round over! ** You answered ${this.calculatePercentageCorrect()}% of the questions correctly!`
         console.log(message)
         return message
-
     }
 }
 
